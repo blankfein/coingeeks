@@ -1,0 +1,58 @@
+- AWS S3の設定
+
+AWS S3もバケットを作成します。バケット名を環境変数に設定します。
+AWS_S3_BUCKET
+
+S3のアクセスキーとシークレットアクセスキーを取得して環境変数に設定します。
+AWS_ACCESS_KEY_ID
+AWS_SECRET_ACCESS_KEY
+
+バケットのリージョンを取得して環境変数に設定します。
+AWS_REGION
+
+- Facebookログインの設定
+
+Facebookアプリを作成します。
+AppIDとApp secretを取得して環境変数に設定します。
+FACEBOOK_APP_ID
+FACEBOOK_APP_SECRET
+
+- データベースの設定
+
+データベースを作成してURLを環境変数に設定します。
+DATABASE_URL
+Heroicの場合はpostgresqlを作成すると自動的に作成されます。
+
+- メモリ管理サーバの設定
+
+メモリ管理サーバを作成してURLと認証情報を環境変数に設定します。
+MEMCACHIER_SERVERS
+MEMCACHIER_USERNAME
+MEMCACHIER_PASSWORD
+
+- メールサーバの設定
+
+SendGridを利用する場合、ユーザ名とパスワードを環境変数に設定します。
+SENDGRID_USERNAME
+SENDGRID_PASSWORD
+
+- 通知系メールの設定
+
+/config/environments/*.rbの
+config.action_mailer.default_url_options
+の値を修正して、メール本文内に記載されるサービスURLのホスト名を適切な値に変更します。
+
+メールサーバを変更する場合、
+config.action_mailer.smtp_settings
+の値を修正して、メール送信時に利用するメールサーバを適切な値に変更します。
+
+/config/settings.yml
+の値を修正して、
+devise:
+     mailer:
+          sender:
+や、
+mailer:
+     from:
+          default:
+の値を修正して、通知系のFrom名を適切な値に変更します。

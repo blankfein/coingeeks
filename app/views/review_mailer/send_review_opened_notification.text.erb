@@ -1,0 +1,11 @@
+<%= t '.greeting1' %><%= @to_user.profile.full_name %><%= t 'prefix' %><%= t '.greeting2' %>
+
+<%= t('.msg1', host: @host_user.profile.full_name, listing: Listing.model_name.human, listing_title: @listing.title, schedule: @reservation.schedule, review: Review.model_name.human) %>
+
+<%= t('.msg2', review: Review.model_name.human) %>
+
+<%= listing_url(nil, @reservation.listing_id) %>
+
+--
+<%= t 'basic_info.service_name' %>
+
